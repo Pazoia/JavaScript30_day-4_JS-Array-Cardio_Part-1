@@ -65,7 +65,7 @@
         console.table(fifteen)
     </script>
     <h1>
-        1 - Filter the list of inventors for those who where born in the 1500's using the .filter method
+        1 - Filter the list of inventors for those who were born in the 1500's using the .filter method
         <script type="text/javascript">
             var table = document.createElement("table");
             for (var i = 0; i < fifteen.length; i++) {
@@ -106,9 +106,28 @@
     <script>
         // Array.prototype.sort()
         // 3. Sort the inventors by birthdate, oldest to youngest
-        
+        const ordered = inventors.sort((a, b) => (a.year > b.year ? 1 : -1));
 
+        console.table(ordered)
     </script>
+    <h1>
+        3 - Sort the inventors by birthdate, oldest to youngest using the .sort method
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < ordered.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(ordered[i].first));
+            var lastCell = row.insertCell(-1);
+            lastCell.appendChild(document.createTextNode(ordered[i].last));
+            var yearCell = row.insertCell(-1);
+            yearCell.appendChild(document.createTextNode(ordered[i].year));
+            var passedCell = row.insertCell(-1);
+            passedCell.appendChild(document.createTextNode(ordered[i].passed));
+        }
+        document.body.appendChild(table);
+        </script>
+    </h1>
 
     <script>
         // Array.prototype.reduce()

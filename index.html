@@ -147,7 +147,31 @@
 
     <script>
         // 5. Sort the inventors by years lived
+        const oldest = inventors.sort(function(a, b) {
+            const lastGuy = a.passed - a.year;
+            const nextGuy = b.passed - b.year;
+            return lastGuy > nextGuy ? -1 : 1;
+        });
+        console.table(oldest)
     </script>
+    <h1>
+        5 - Sort the inventors by years lived
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < oldest.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(oldest[i].first));
+            var lastCell = row.insertCell(-1);
+            lastCell.appendChild(document.createTextNode(oldest[i].last));
+            var yearCell = row.insertCell(-1);
+            yearCell.appendChild(document.createTextNode(oldest[i].year));
+            var passedCell = row.insertCell(-1);
+            passedCell.appendChild(document.createTextNode(oldest[i].passed));
+        }
+        document.body.appendChild(table);
+        </script>
+    </h1>
 
     <script>
         // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name

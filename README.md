@@ -1,7 +1,7 @@
 # JavaScritp 30 challenge
 ## Day 4 - JS Cardio, part 1 
 
-Brief introduction of project
+In challenge 4 Wes Bos is focusing heavily on JS arrays and methods that can be applied to them.
 
 ## Table of Contents
 
@@ -11,14 +11,19 @@ Brief introduction of project
 
 ## Description
 
-Describe what the project does, 
+The methods studied in this challenge are:  
+
+* .filter
+* .map
+* .sort
+* .reduce
 
 ## Technologies
 
-JavaScript
-HTML
+* JavaScript
+* HTML
 
 ## Sources
 
 This was was created following a tutorial from Wes Bos    
-[JavaScript30 tutorial link](https://javascript30.com/)
+[JavaScript30 Link](https://javascript30.com/)

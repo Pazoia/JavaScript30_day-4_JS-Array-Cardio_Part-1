@@ -1,4 +1,4 @@
-# JavaScritp 30 challenge
+# JavaScritp30 challenge
 ## Day 4 - JS Cardio, part 1 
 
 In challenge 4 Wes Bos is focusing heavily on JS arrays and methods that can be applied to them.

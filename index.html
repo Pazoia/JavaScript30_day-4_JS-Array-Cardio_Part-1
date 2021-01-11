@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Array Cardio 💪</title>
+</head>
+<body>
+    <p><em>Psst: have a look in the JavaScript console</em> 💁</p>
 
-    <script type="text/javascript">
+    <script>
         // Get your shorts on - this is an array workout!
         // ## Array Cardio - Part 1
         
@@ -33,14 +36,10 @@
         ];
         
         const dataArray = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
     </script>
-</head>
-<body>
-    <p><em>Psst: have a look in the JavaScript console</em> 💁</p>
-
+    
     <h1>
-        Original Data: <br>
+        Original Data: Inventors<br>
         <script type="text/javascript">
             var table = document.createElement("table");
             for (var i = 0; i < inventors.length; i++) {
@@ -56,35 +55,85 @@
             }
             document.body.appendChild(table);
         </script>
-
     </h1>
-    <h1>Filter the list of inventors for those who where born in the 1500's using the .filter method</h1>
 
-    <script>
+    <script>   
         // Array.prototype.filter()
         // 1. Filter the list of inventors for those who where born in the 1500's
+        const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600))
 
+        console.table(fifteen)
+    </script>
+    <h1>
+        1 - Filter the list of inventors for those who where born in the 1500's using the .filter method
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < fifteen.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(fifteen[i].first));
+            var lastCell = row.insertCell(-1);
+            lastCell.appendChild(document.createTextNode(fifteen[i].last));
+            var yearCell = row.insertCell(-1);
+            yearCell.appendChild(document.createTextNode(fifteen[i].year));
+            var passedCell = row.insertCell(-1);
+            passedCell.appendChild(document.createTextNode(fifteen[i].passed));
+        }
+        document.body.appendChild(table);
+        </script>
+    </h1>
+
+    <script>
         // Array.prototype.map()
         // 2. Give us an array of the inventors first and last names
+        const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+        
+        console.table(fullNames)
+    </script>
+    <h1>
+        2 - Give us the inventors first and last names using .map method
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < fullNames.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(fullNames[i]));
+        }
+        document.body.appendChild(table);
+        </script>
+    </h1>
 
+    <script>
         // Array.prototype.sort()
         // 3. Sort the inventors by birthdate, oldest to youngest
-
-        // Array.prototype.reduce()
-        // 4. How many years did all the inventors live all together?
-
-        // 5. Sort the inventors by years lived
-
-        // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
-        // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
-        // 7. Sort exercise
-        // Sort the people alphabetically by last name
-
-        // 8. Reduce exercise
-        // Sum up the instances of each element on the data array
+        
 
     </script>
+
+    <script>
+        // Array.prototype.reduce()
+        // 4. How many years did all the inventors live all together?
+    </script>
+
+    <script>
+        // 5. Sort the inventors by years lived
+    </script>
+
+    <script>
+        // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
+        // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    </script>
+
+    <script>
+        // 7. Sort exercise
+        // Sort the people alphabetically by last name
+    </script>
+
+    <script>
+        // 8. Reduce exercise
+        // Sum up the instances of each element on the data array
+    </script>
+
     
 </body>
 </html>

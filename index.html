@@ -223,8 +223,36 @@
     <script>
         // 8. Reduce exercise
         // Sum up the instances of each element on the data array
-    </script>
+        const transportation = dataArray.reduce(function(obj, item) {
+            if (!obj[item]) {
+                obj[item] = 0;
+            }
+            obj[item]++;
+            return obj;
+        }, {});
+        console.log(transportation);
 
+    </script>
+    <h1>
+        8 - Original data:
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < dataArray.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(dataArray[i]));
+        }
+        document.body.appendChild(table);
+        </script>
+        <h2>
+            Sum up the instances of each element on the data array using the .reduce method: <br>
+        </h2>
+        <script>
+            for(let item in transportation) {
+                document.write(`${item} ${transportation[item]}, `)
+            }
+        </script>
+    </h1>
     
 </body>
 </html>

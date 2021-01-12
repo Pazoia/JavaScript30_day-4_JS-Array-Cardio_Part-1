@@ -155,7 +155,7 @@
         console.table(oldest)
     </script>
     <h1>
-        5 - Sort the inventors by years lived
+        5 - Sort the inventors by years lived using the .sort method
         <script type="text/javascript">
             var table = document.createElement("table");
             for (var i = 0; i < oldest.length; i++) {
@@ -182,14 +182,44 @@
         // const de = links
         //             .map(link => link.textContent)
         //             .filter(streetName => streetName.includes('de'));
-
     </script>
+    <h1>
+        6 - Create a list of Boulevards in Paris that contain 'de' anywhere in the name
+        <h2>
+            Data retrived from https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris <br>
+            Code use on Chrome DevTools console: <br><br>
+            const category = document.querySelector('.mw-category'); <br>
+            const links = Array.from(category.querySelectorAll('a')); <br>
+            const de = links <br>
+                         .map(link => link.textContent) <br>
+                         .filter(streetName => streetName.includes('de')); <br>
+        </h2>
+
+    </h1>
 
     <script>
         // 7. Sort exercise
         // Sort the people alphabetically by last name
+        const alpha = people.sort((lastOne, nextOne) => {
+            const [aLast, aFirst] = lastOne.split(', ');
+            const [bLast, bFirst] = nextOne.split(', ');
+            return aLast > bLast ? 1 : -1;
+        });
+        console.log(alpha);
     </script>
-
+    <h1>
+        7 - Sort the people alphabetically by last name using the .sort method
+        <script type="text/javascript">
+            var table = document.createElement("table");
+            for (var i = 0; i < alpha.length; i++) {
+            var row = table.insertRow(-1);
+            var firstCell = row.insertCell(-1);
+            firstCell.appendChild(document.createTextNode(alpha[i]));
+        }
+        document.body.appendChild(table);
+        </script>
+    </h1>
+    
     <script>
         // 8. Reduce exercise
         // Sum up the instances of each element on the data array
